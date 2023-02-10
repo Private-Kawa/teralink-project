@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->id();
             $table->boolean('admin_id');
+            $table->date('date');
             $table->string('title', 30);
             $table->string('content');
-            $table->date('date');
             $table->timestamps();
             $table->softDeletes();
         });
