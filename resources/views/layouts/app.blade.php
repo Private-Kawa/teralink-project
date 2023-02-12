@@ -30,7 +30,7 @@
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="pl-64">
                 {{ $slot }}
             </main>
         </div>
