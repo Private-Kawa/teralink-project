@@ -23,7 +23,7 @@ use App\Http\Controllers\EventController;
 //     return view('home');
 // })->middleware(['auth', 'verified'])->name('home');
 
-Route::get('/home', [EventController::class, 'viewEvent'])->name('home');
+Route::get('/home', [EventController::class, 'getData'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
