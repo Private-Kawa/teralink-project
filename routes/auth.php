@@ -18,7 +18,7 @@ Route::middleware('guest')->group(function () {
     Route::post('register', [RegisteredUserController::class, 'store']);
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
-                ->name('login');
+                ->name('home');
 
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
@@ -33,6 +33,10 @@ Route::middleware('guest')->group(function () {
 
     Route::post('reset-password', [NewPasswordController::class, 'store'])
                 ->name('password.store');
+
+    // ゲスト '/' → ログイン画面
+    Route::get('/', [AuthenticatedSessionController::class, 'create'])
+            ->name('login');
 });
 
 Route::middleware('auth')->group(function () {
