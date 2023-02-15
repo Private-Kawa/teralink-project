@@ -15,15 +15,20 @@ use App\Http\Controllers\EventController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('/home');
-// })->middleware(['auth'])->name('logout');
+Route::get('/', function () {
+    return view('/home');
+})->middleware(['auth'])->name('logout');
 
-// Route::get('/home', function () {
-//     return view('home');
-// })->middleware(['auth', 'verified'])->name('home');
+Route::get('/home', function () {
+    return view('home');
+})->middleware(['auth', 'verified'])->name('home');
 
 Route::get('/home', [EventController::class, 'getData'])->name('home');
+
+Route::get('/dashboard', function () {
+    return view('home');
+})->middleware(['auth', 'verified'])->name('home');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
