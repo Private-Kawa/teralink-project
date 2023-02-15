@@ -1,24 +1,24 @@
 <x-app-layout>
     <h1 class="text-2xl pb-3">あなたの予定</h1>
     <section>
-        <ul class='events'>
+        <h2 class="text-xl pt-3 pb-3">イベント一覧</h2>
+        <ul class='pb-6'>
             @foreach ($events as $event)
-                <li class='rounded border-2 border-solid border-gray-200'>
-                    <h2 class='title'>{{ $event->title }}</h2>
-                    <h2 class='date'>{{ $event->date }}</h2>
+                <li class='p-2 rounded border-2 border-solid border-gray-200'>
+                    <h3 class='title text-lg'>{{ $event->title }}</h2>
+                    <h3 class='date'>日程：{{ $event->date }}</h2>
+                    <p class='capacity'>定員：{{ $event->capacity }}</p>
                     <p class='content'>{{ $event->content }}</p>
-                    <p class='capacity'>{{ $event->capacity }}</p>
-                    <p class='created_at'>{{ $event->created_at }}</p>
                 </li>
             @endforeach
         </ul>
-        <ul class='news'>
+        <h2 class="text-xl pt-3 pb-3">ニュース一覧</h2>
+        <ul class='pb-6'>
             @foreach ($news as $news_item)
-                <li class='rounded border-2 border-solid border-gray-200'>
-                    <h2 class='title'>{{ $news_item->title }}</h2>
-                    <h2 class='date'>{{ $news_item->date }}</h2>
+                <li class='p-2 rounded border-2 border-solid border-gray-200'>
+                    <h3 class='title text-lg'>{{ $news_item->title }}</h2>
+                    <h3 class='date'>日程：{{ $news_item->date }}</h2>
                     <p class='content'>{{ $news_item->content }}</p>
-                    <p class='created_at'>{{ $news_item->created_at }}</p>
                 </li>
             @endforeach
         </ul>
