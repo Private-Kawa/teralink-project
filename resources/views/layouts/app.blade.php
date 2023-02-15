@@ -30,7 +30,7 @@
             @endif
 
             <!-- Page Content -->
-            <main class="pl-64">
+            <main class="mx-auto px-6 min-[640px]:pl-72 min-[640px]:pr-6 min-[640px]:pt-3">
                 {{ $slot }}
             </main>
         </div>
