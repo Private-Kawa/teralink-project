@@ -15,21 +15,10 @@ use App\Http\Controllers\EventController;
 |
 */
 
-Route::get('/', function () {
-    return view('/home');
-})->middleware(['auth'])->name('logout');
-
-Route::get('/home', function () {
-    return view('home');
-})->middleware(['auth', 'verified'])->name('home');
-
-Route::get('/home', [EventController::class, 'getData'])->name('home');
-
-Route::get('/dashboard', function () {
-    return view('home');
-})->middleware(['auth', 'verified'])->name('home');
+// Route::get('/', [EventController::class, 'getData']);
 
 Route::middleware('auth')->group(function () {
+    Route::get('/home', [EventController::class, 'getData'])->name('home');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
