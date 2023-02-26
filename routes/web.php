@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ use App\Http\Controllers\EventController;
 
 Route::middleware('auth')->group(function () {
     Route::get('/home', [EventController::class, 'getData'])->name('home');
+    Route::get('/posts/events/{event}', [EventController::class ,'showEvent']);
+    Route::get('/posts/news/{news}', [EventController::class ,'showNews']);
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
