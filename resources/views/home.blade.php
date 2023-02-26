@@ -29,7 +29,9 @@
         <section>
             <div class="flex items-center">
                 <h2 class="text-xl py-3">すべてのイベント</h2>
-                <button type="button" class="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm ml-3 px-4 py-1 dark:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none dark:focus:ring-blue-700">イベント新規追加</button>
+                <a href='/posts/create'>
+                    <button type="button" class="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm ml-3 px-4 py-1 dark:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none dark:focus:ring-blue-700">イベント新規追加</button>
+                </a>
             </div>
             <ul class='pb-6'>
             @foreach ($events as $event)
@@ -38,12 +40,17 @@
                     <h3 class='date'>日程：{{ $event->date }}</h2>
                     <p class='capacity'>定員：{{ $event->capacity }}</p>
                     <p class='content'>{{ $event->content }}</p>
+                    <a href='/posts/events/{{ $event->id }}'>
+                        <button type="button" class="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm ml-3 px-4 py-1 dark:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none dark:focus:ring-blue-700">詳細</button>
+                    </a>
                 </li>
             @endforeach
             </ul>
             <div class="flex items-center">
                 <h2 class="text-xl py-3">すべてのニュース</h2>
-                <button type="button" class="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm ml-3 px-4 py-1 dark:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none dark:focus:ring-blue-700">ニュース新規追加</button>
+                <a href='/posts/create'>
+                    <button type="button" class="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm ml-3 px-4 py-1 dark:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none dark:focus:ring-blue-700">ニュース新規追加</button>
+                </a>
             </div>
             <ul class='pb-6'>
             @foreach ($news as $news_item)
@@ -51,6 +58,9 @@
                     <h3 class='title text-lg'>{{ $news_item->title }}</h2>
                     <h3 class='date'>日程：{{ $news_item->date }}</h2>
                     <p class='content'>{{ $news_item->content }}</p>
+                    <a href='posts/news/{{ $news_item->id }}'>
+                        <button type="button" class="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm ml-3 px-4 py-1 dark:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none dark:focus:ring-blue-700">詳細</button>
+                    </a>
                 </li>
             @endforeach
             </ul>
