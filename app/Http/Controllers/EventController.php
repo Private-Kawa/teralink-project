@@ -13,11 +13,23 @@ class EventController extends Controller
         return view("home")->with(['events'=>$event->get(), 'news'=>$news->get()]);
     }
     
-    public function showEvent(Event $event){
+    public function showEvent(Event $event) {
         return view('posts/events/show')->with(['events' => $event]);
     }
     
-    public function showNews(News $news){
+    public function showNews(News $news) {
         return view('posts/news/show')->with(['news' => $news]);
+    }
+    
+    public function storeEvents(Request $request, Event $event) {
+        $input = $request['events'];
+        $event->fill($input)->save();
+        return redirect('/posts/events/' . $event->id);
+    }
+    
+    public function storeNews(Request $request, News $news) {
+        $input = $request['news'];
+        $news->fill($input)->save();
+        return redirect('/posts/news/' . $news->id);
     }
 }

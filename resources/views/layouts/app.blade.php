@@ -14,7 +14,10 @@
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@200;300;400;500&display=swap" rel="stylesheet">
 
         <!-- Scripts -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css" rel="stylesheet" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/datepicker.min.js"></script>
     </head>
     <body class="font-sans antialiased">
         <section class="min-h-screen bg-gray-100 dark:text-white dark:bg-gray-900">
@@ -25,4 +28,5 @@
             </main>
         </div>
     </body>
+   
 </html>

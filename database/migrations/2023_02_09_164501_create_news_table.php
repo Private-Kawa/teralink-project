@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->boolean('admin_id');
+            $table->boolean('admin_id')->default(true);
             $table->date('date');
             $table->string('title', 30);
             $table->string('content');
