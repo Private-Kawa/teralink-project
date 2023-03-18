@@ -45,6 +45,11 @@
                     <h3 class='date'>日程：{{ $event->date }}</h3>
                     <p class='capacity'>定員：{{ $event->capacity }}</p>
                     <p class='content'>{{ $event->content }}</p>
+                    <form action="/posts/events/{{ $event->id }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">delete</button>
+                    </form>
                 </li>
             @endforeach
             </ul>
@@ -62,6 +67,11 @@
                     </div>
                     <h3 class='date'>日程：{{ $news_item->date }}</h3>
                     <p class='content'>{{ $news_item->content }}</p>
+                    <form action="/posts/news/{{ $news_item->id }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">delete</button>
+                    </form>
                 </li>
             @endforeach
             </ul>
