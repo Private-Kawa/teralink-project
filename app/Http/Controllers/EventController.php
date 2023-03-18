@@ -32,4 +32,14 @@ class EventController extends Controller
         $news->fill($input)->save();
         return redirect('/posts/news/' . $news->id);
     }
+    
+    public function deleteEvent(Event $event) {
+        $event->delete();
+        return redirect('/home');
+    }
+    
+    public function deleteNews(News $news) {
+        $news->delete();
+        return redirect('/home');
+    }
 }
