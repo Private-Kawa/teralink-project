@@ -22,8 +22,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', [EventController::class, 'getData'])->name('home');
     Route::get('/posts/create', [PostController::class ,'create']);
     Route::get('/posts/events/{event}', [EventController::class ,'showEvent']);
-    Route::post('/posts/events', [EventController::class ,'store']);
     Route::get('/posts/news/{news}', [EventController::class ,'showNews']);
+    Route::post('/posts/news', [EventController::class ,'storeNews']);
+    Route::post('/posts/events', [EventController::class ,'storeEvents']);
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

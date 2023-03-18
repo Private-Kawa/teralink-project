@@ -21,9 +21,15 @@ class EventController extends Controller
         return view('posts/news/show')->with(['news' => $news]);
     }
     
-    public function store(Request $request, Event $event) {
+    public function storeEvents(Request $request, Event $event) {
         $input = $request['events'];
         $event->fill($input)->save();
         return redirect('/posts/events/' . $event->id);
+    }
+    
+    public function storeNews(Request $request, News $news) {
+        $input = $request['news'];
+        $news->fill($input)->save();
+        return redirect('/posts/news/' . $news->id);
     }
 }
