@@ -41,15 +41,15 @@
                         <a href='/posts/events/{{ $event->id }}'>
                             <button type="button" class="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm ml-3 px-4 py-1 dark:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none dark:focus:ring-blue-700">詳細</button>
                         </a>
+                        <form action="/posts/events/{{ $event->id }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="text-white bg-red-800 hover:bg-red-900 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm ml-3 px-4 py-1 dark:bg-red-700 dark:hover:bg-red-800 focus:outline-none dark:focus:ring-red-700">削除</button>
+                        </form>
                     </div>
                     <h3 class='date'>日程：{{ $event->date }}</h3>
                     <p class='capacity'>定員：{{ $event->capacity }}</p>
                     <p class='content'>{{ $event->content }}</p>
-                    <form action="/posts/events/{{ $event->id }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit">delete</button>
-                    </form>
                 </li>
             @endforeach
             </ul>
@@ -64,14 +64,14 @@
                         <a href='posts/news/{{ $news_item->id }}'>
                             <button type="button" class="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm ml-3 px-4 py-1 dark:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none dark:focus:ring-blue-700">詳細</button>
                         </a>
+                        <form action="/posts/news/{{ $news_item->id }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="text-white bg-red-800 hover:bg-red-900 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm ml-3 px-4 py-1 dark:bg-red-700 dark:hover:bg-red-800 focus:outline-none dark:focus:ring-red-700">削除</button>
+                        </form>
                     </div>
                     <h3 class='date'>日程：{{ $news_item->date }}</h3>
                     <p class='content'>{{ $news_item->content }}</p>
-                    <form action="/posts/news/{{ $news_item->id }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit">delete</button>
-                    </form>
                 </li>
             @endforeach
             </ul>
