@@ -18,10 +18,10 @@ class EventSeeder extends Seeder
     {
         DB::table('events')->insert([
             'admin_id'=> true,
-            'date'=> "2099/01/01",
-            'title' => 'イベント1 シーダデータ',
-            'content'=> 'イベント1 シーダデータのコンテンツです。内容が入ります。',
-            'capacity'=> 20,
+            'date'=> "2023/03/21",
+            'title' => '2023年春彼岸会法要',
+            'content'=> '2023年春の彼岸会を3月21日(火・祝)に勤修致します。ぜひ御参拝くださいませ。',
+            'capacity'=> 50,
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);

@@ -18,9 +18,9 @@ class NewsSeeder extends Seeder
     {
         DB::table('news')->insert([
             'admin_id'=> true,
-            'date'=> "2099/01/01",
-            'title' => 'ニュース1 シーダデータ',
-            'content'=> 'ニュース1 シーダデータのコンテンツです。内容が入ります。',
+            'date'=> "2023/03/22",
+            'title' => 'Teralink公開',
+            'content'=> '門信徒とお寺の住職をつなげるアプリ Teralink / テラリンク を公開しました。',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ]);
