@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest; 
 use App\Models\Event;
 use App\Models\News;
 
@@ -33,6 +34,16 @@ class EventController extends Controller
         return redirect('/posts/news/' . $news->id);
     }
     
+    public function editEvent(Event $event) {
+        return view('posts/events/edit')->with(['events' => $event]);
+    }
+    
+    public function updateEvent(PostRequest $request, Event $event) {
+        $input_post = $request['events'];
+        $event->fill($input_post)->save();
+        return redirect('/posts/events/' . $event->id);
+    }
+
     public function deleteEvent(Event $event) {
         $event->delete();
         return redirect('/home');
