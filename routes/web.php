@@ -23,10 +23,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/posts/create', [PostController::class ,'create']);
     Route::get('/posts/events/{event}', [EventController::class ,'showEvent']);
     Route::get('/posts/news/{news}', [EventController::class ,'showNews']);
-    Route::post('/posts/news', [EventController::class ,'storeNews']);
     Route::post('/posts/events', [EventController::class ,'storeEvents']);
+    Route::post('/posts/news', [EventController::class ,'storeNews']);
     Route::get('/posts/events/{event}/edit', [EventController::class, 'editEvent']);
+    Route::get('/posts/news/{news}/edit', [EventController::class, 'editNews']);
     Route::put('/posts/events/{event}', [EventController::class, 'updateEvent']);
+    Route::put('/posts/news/{news}', [EventController::class, 'updateNews']);
     Route::delete('/posts/events/{event}', [EventController::class,'deleteEvent']);
     Route::delete('/posts/news/{news}', [EventController::class,'deleteNews']);
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
