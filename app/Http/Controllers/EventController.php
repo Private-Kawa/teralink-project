@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\PostRequest; 
+use App\Http\Requests\EventRequest;
+use App\Http\Requests\NewsRequest;
 use App\Models\Event;
 use App\Models\News;
 
 class EventController extends Controller
 {
-    // EventとNewsを取得してViewへ渡す関数
     public function getData(Event $event, News $news) {
         return view("home")->with(['events'=>$event->get(), 'news'=>$news->get()]);
     }
@@ -38,10 +38,20 @@ class EventController extends Controller
         return view('posts/events/edit')->with(['events' => $event]);
     }
     
-    public function updateEvent(PostRequest $request, Event $event) {
+    public function editNews(News $news) {
+        return view('posts/news/edit')->with(['news' => $news]);
+    }
+    
+    public function updateEvent(EventRequest $request, Event $event) {
         $input_post = $request['events'];
         $event->fill($input_post)->save();
         return redirect('/posts/events/' . $event->id);
+    }
+    
+    public function updateNews(NewsRequest $request, News $news) {
+        $input_post = $request['news'];
+        $news->fill($input_post)->save();
+        return redirect('/posts/news/' . $news->id);
     }
 
     public function deleteEvent(Event $event) {

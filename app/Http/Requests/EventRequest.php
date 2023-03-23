@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostRequest extends FormRequest
+class EventRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -19,6 +19,5 @@ class PostRequest extends FormRequest
             'events.capacity' => 'required|integer|max:4000',
             'events.content' => 'required|string|max:10000',
         ];
-
     }
 }
