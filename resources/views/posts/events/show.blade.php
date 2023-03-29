@@ -1,5 +1,5 @@
 <x-app-layout>
-    @if(Auth::user()->is_admin === 0 )
+    @if(Auth::user()->id !==  1)
         管理者専用の画面です。
     @else
         <h2 class="text-xl mb-2 py-3">{{ $events->title }}<a href="/posts/events/{{ $events->id }}/edit" class="ml-3 text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1 dark:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none dark:focus:ring-blue-700">編集</a></h2>
