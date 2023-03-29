@@ -1,7 +1,7 @@
 <x-app-layout>
     @if(Auth::user()->id !==  1)
         管理者専用の画面です。
-    @elseif(Auth::user()->id ===  1)
+    @else
         <h1 class="text-2xl pb-3">イベント記事編集 -管理者画面-</h1>
         <form action="/posts/events/{{ $events->id }}" method="POST">
             @csrf
