@@ -1,7 +1,7 @@
 <x-app-layout>
-    @if(Auth::user()->is_admin === 0 )
+    @if(Auth::user()->id !==  1)
         管理者専用の画面です。
-    @else
+    @elseif(Auth::user()->id ===  1)
         <h1 class="text-2xl pb-3">ニュース記事編集 -管理者画面-</h1>
         <form action="/posts/news/{{ $news->id }}" method="POST">
             @csrf

@@ -1,7 +1,7 @@
 <x-app-layout>
-    @if( Auth::user()->is_admin === 0 )
+    @if(Auth::user()->id !==  1)
         <h1 class="text-2xl pb-3">不正な画面です。</h1>
-    @else
+    @elseif(Auth::user()->id ===  1)
         <h1 class="text-2xl pb-3">記事追加画面 -管理者画面-</h1>
         <section>
           <form action="/posts/events" method="POST" id="formElem" name="formElem">
