@@ -1,66 +1,63 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# てらリンク | TeraLink
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+てらリンク（以下、本アプリ）は、寺院の情報をユーザーへ発信し、インターネット上で寺院とユーザーとのやり取りをするアプリケーションです。昨今のコロナ禍に伴い、寺院の活動が制限されている課題に対し、インターネット上で寺院とのやり取りを行うことで、非対面でも関わりを繋げていくために開発しました。
 
-## About Laravel
+# 利用方法
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 通常ユーザー
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1. 本アプリのログイン画面にアクセス https://teralink-project.herokuapp.com/login
+2. ログイン後、寺院のイベントとニュースが閲覧できます。
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 管理者
 
-## Learning Laravel
+1. 本アプリのログイン画面にアクセス https://teralink-project.herokuapp.com/login
+2. 管理者名でログイン後、寺院のイベントとニュースの作成、編集、削除ができます。
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# 機能
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- ログイン機能
+- イベント、ニュースの CRUD 機能
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# 使用技術
 
-## Laravel Sponsors
+## フロントエンド
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- HTML
+- CSS
+- JavaScript
+- JQuery
+- TailwindCSS
 
-### Premium Partners
+## バックエンド
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- PHP
+- Laravel
+- composer
+- PostgreSQL
 
-## Contributing
+## インフラ
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Heroku(デプロイ環境)
+- AWS(EC2 Cloud9)
 
-## Code of Conduct
+## その他
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Git
+- GitHub
+- Figma
 
-## Security Vulnerabilities
+# 今後の更新予定
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- 出席周知機能
 
-## License
+イベントページで出席/欠席ボタンを配置し、出席/欠席を寺院側へ周知する機能を追加予定です。通常ユーザー側は出席したイベントを一覧で表示できるようになり、管理者側は出席予定のユーザー数、ユーザー名が表示されます。
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- お問い合わせフォーム
+
+ユーザーは管理者に対して、フォームを通じて連絡を取ることができます。
+
+# 作成者
+
+- Github 名：Private-Kawa
+- Github リンク：https://github.com/Private-Kawa/teralink-project
