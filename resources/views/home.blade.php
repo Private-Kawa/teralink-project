@@ -1,6 +1,5 @@
 <x-app-layout>
     @if(Auth::user()->id !==  1)
-    {{dd(Auth::user()->id)}}
         <h1 class="text-2xl pb-3">あなたの予定</h1>
         <section>
             <h2 class="text-xl py-3">イベント一覧</h2>
@@ -25,8 +24,7 @@
             @endforeach
             </ul>
         </section>
-    @elseif (Auth::user()->id ===  1)
-    {{dd(Auth::user()->id)}}
+    @else
         <h1 class="text-2xl pb-3">あなたの予定 -管理者画面-</h1>
         <a href='/posts/create'>
             <button type="button" class="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm ml-3 px-4 py-1 dark:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none dark:focus:ring-blue-700">記事新規追加</button>
