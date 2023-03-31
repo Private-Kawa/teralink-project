@@ -18,6 +18,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/datepicker.min.js"></script>
+        <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
     </head>
     <body class="font-sans antialiased">
         <section class="min-h-screen bg-gray-100 dark:text-white dark:bg-gray-900">
