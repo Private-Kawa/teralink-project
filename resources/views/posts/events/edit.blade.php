@@ -1,6 +1,9 @@
 <x-app-layout>
     @if(Auth::user()->id !==  1)
-        管理者専用の画面です。
+        <p>管理者専用の画面です</p>
+        <div class="mb-3">
+            <a href="/home" class="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1 dark:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none dark:focus:ring-blue-700">トップへ戻る</a>
+        </div>
     @else
         <h1 class="text-2xl pb-3">イベント記事編集 -管理者画面-</h1>
         <form action="/posts/events/{{ $events->id }}" method="POST">
