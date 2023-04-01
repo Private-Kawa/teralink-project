@@ -27,7 +27,7 @@
             <p class="text-sm text-gray-700 dark:text-gray-400">{{ $events->date }}</p>
         </h2>
         <div class="flex justify-end mb-3">
-            <a href="/posts/news/{{ $events->id }}/edit" class="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1 dark:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none dark:focus:ring-blue-700">編集</a>
+            <a href="/posts/events/{{ $events->id }}/edit" class="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1 dark:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none dark:focus:ring-blue-700">編集</a>
         </div>
         <p class="mb-6">{{ $events->content }}</p>
     @endif
