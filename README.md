@@ -6,8 +6,8 @@
 
 ## 通常ユーザー
 
-1. 本アプリのログイン画面にアクセス https://teralink-project.herokuapp.com/login
-2. ログイン後、寺院のイベントとニュースが閲覧できます。
+1. 本アプリのログイン画面にアクセスして新規登録 https://teralink-project.herokuapp.com/register
+2. 登録、ログイン後、寺院のイベントとニュースが閲覧できます。
 
 ## 管理者
 
