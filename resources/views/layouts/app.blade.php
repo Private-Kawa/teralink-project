@@ -6,6 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
+        <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -18,13 +19,13 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/datepicker.min.js"></script>
-        <link rel="icon" href="/img/icon.svg" type="image/svg+xml">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     </head>
     <body class="font-sans antialiased">
         <section class="min-h-screen bg-gray-100 dark:text-white dark:bg-gray-900">
             @include('layouts.navigation')
             <!-- Page Content -->
-            <main class="mx-auto px-6 min-[640px]:pl-72 min-[640px]:pr-6 min-[640px]:pt-3">
+            <main class="mx-auto px-6 pb-6 min-[640px]:pl-72 min-[640px]:pr-6 min-[640px]:pt-3">
                 {{ $slot }}
             </main>
         </div>
