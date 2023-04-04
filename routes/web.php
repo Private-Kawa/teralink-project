@@ -19,9 +19,9 @@ use App\Http\Controllers\PostController;
 // Route::get('/', [EventController::class, 'getData']);
 
 Route::middleware('auth')->group(function () {
-    // getdata 全てのデータを取得
+    // getdata 全てのデータを昇順で取得
     Route::get('/home', [PostController::class, 'getData'])->name('home');
-    
+
     // create 新しいデータを作成
     Route::get('/posts/create', [PostController::class ,'create']);
     
