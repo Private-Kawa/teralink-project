@@ -4,7 +4,7 @@
     @else
         <h1 class="text-2xl pb-3">記事追加画面 -管理者画面-</h1>
         <section>
-          <form action="/posts/events" method="POST" id="formElem" name="formElem">
+          <form action="/posts/events" method="POST" id="formElem" name="formElem" enctype="multipart/form-data">
             @csrf
             <div class="mb-6">
               <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">記事の種類</label>
@@ -29,6 +29,10 @@
             <div id="capacityElem" class="mb-6">
               <label for="capacity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">定員</label>
               <input id="capacityInput" type="number" name="events[capacity]" class="w-32 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+            </div>
+            <div class="mb-6">
+              <label for="image" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">写真</label>
+              <input type="file" name="images[]" class="w-32 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             </div>
             <div class="mb-6">
               <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">内容</label>

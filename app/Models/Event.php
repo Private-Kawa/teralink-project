@@ -20,6 +20,11 @@ class Event extends Model
     ];
     
     public function users() {
-        return $this->belongsToMany(Event::class);
+        return $this->belongsToMany(User::class);
     }
+    
+    public function events_images() {
+        return $this->hasMany(EventsImages::class);
+    }
+    
 }
