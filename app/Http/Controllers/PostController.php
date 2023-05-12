@@ -8,6 +8,9 @@ use App\Http\Requests\NewsRequest;
 use App\Models\Post;
 use App\Models\Event;
 use App\Models\News;
+use App\Models\EventsImages;
+use JD\Cloudder\Facades\Cloudder;
+use Cloudinary;
 
 class PostController extends Controller
 {
@@ -28,10 +31,30 @@ class PostController extends Controller
     }
     
     public function storeEvents(Request $request, Event $event) {
+
         $input = $request['events'];
         $event->fill($input)->save();
+
+        $images = $request->file('images');
+        // cloudinaryへ画像を送信し、画像のURLを$image_urlに代入している
+        if(isset($images)) {
+            foreach($images as $img) {   
+                $events_images = new EventsImages(); //インスタンス作成 imagetableに画像を入れるためにインスタンスを作る cloudinaryから帰ってきたurlを保存する場所がprofとは異なる
+                $upload_url = Cloudinary::upload($img->getRealPath())->getSecurePath(); //$upload_urlにcloudinaryのpathが入ってる
+                $events_images->path = $upload_url;
+                $events_images->event_id = $event->id;
+                $events_images->save();
+            }
+        }
         return redirect('/posts/events/' . $event->id);
     }
+    
+    
+
+    
+    
+    
+    
     
     public function storeNews(Request $request, News $news) {
         $input = $request['news'];
