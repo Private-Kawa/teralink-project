@@ -54,6 +54,10 @@ Route::middleware('auth')->group(function () {
     
     // deleteNews ニュース削除
     Route::delete('/posts/news/{news}', [PostController::class,'deleteNews']);
+
+    // index chatページ表示
+    Route::get('/chat', [App\Http\Controllers\ChatController::class, 'index']);
+
     
     // profile プロフィール編集・更新・削除
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
