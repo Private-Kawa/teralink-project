@@ -18,7 +18,7 @@ use App\Http\Controllers\PostController;
 
 // Route::get('/', [EventController::class, 'getData']);
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', 'verified')->group(function () {
     // getdata 全てのデータを昇順で取得
     Route::get('/home', [PostController::class, 'getData'])->name('home');
 
