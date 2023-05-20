@@ -17,4 +17,12 @@ class News extends Model
         'title',
         'content',
     ];
+    
+    public function users() {
+        return $this->belongsToMany(User::class);
+    }
+    
+    public function news_images() {
+        return $this->hasMany(NewsImages::class);
+    }
 }
