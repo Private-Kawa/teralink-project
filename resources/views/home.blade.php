@@ -8,8 +8,8 @@
             <ul class='mb-5 flex flex-row flex-wrap gap-2'>
             @foreach ($events as $event)
                 <li class="w-full md:w-[calc(50%_-_0.5rem)]  lg:w-[calc(33%_-_0.5rem)] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    @foreach ($events_images as $event_image)
-                        <img class="rounded-t-lg w-full h-52 object-cover" src="https://placehold.jp/1600x900.png?text=画像準備中" alt="" />
+                    @foreach ($event->events_images as $event_image)
+                        <img class="rounded-t-lg w-full h-52 object-cover" src="{{$event_image->path}}" alt="画像準備中" />
                     @endforeach
                     <div class="p-3">
                         <h3 class="mb-1 text-2xl tracking-tight text-gray-900 dark:text-white">{{ $event->title }}</h3>
@@ -26,7 +26,9 @@
             <ul class='mb-5 flex flex-row flex-wrap gap-2'>
             @foreach ($news as $news_item)
                 <li class="w-full md:w-[calc(50%_-_0.5rem)]  lg:w-[calc(33%_-_0.5rem)] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <img class="rounded-t-lg w-full h-52 object-cover" src="https://placehold.jp/1600x900.png?text=画像準備中" alt="" />
+                    @foreach ($news_item->news_images as $news_image)
+                        <img class="rounded-t-lg w-full h-52 object-cover" src="{{$news_image->path}}" alt="画像準備中" />
+                    @endforeach
                     <div class="p-3">
                         <h3 class="mb-1 text-2xl tracking-tight text-gray-900 dark:text-white">{{ $news_item->title }}</h3>
                         <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">{{ $news_item->date }}</p>
@@ -49,9 +51,10 @@
             <h2 class="text-xl mb-3 pb-1 border-b-2 border-gray-200 dark:border-gray-600">仏事・行事の予定</h2>
             <ul class='mb-5 flex flex-row flex-wrap gap-2'>
             @foreach ($events as $event)
+          
                  <li class="w-full md:w-[calc(50%_-_0.5rem)]  lg:w-[calc(33%_-_0.5rem)] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     @foreach ($event->events_images as $event_image)
-                        <img class="rounded-t-lg w-full h-52 object-cover" src="{{$event_image->path}}" alt="" />
+                        <img class="rounded-t-lg w-full h-52 object-cover" src="{{$event_image->path}}" alt="画像準備中" />
                     @endforeach
                     <div class="p-3">
                         <h3 class="mb-1 text-2xl tracking-tight text-gray-900 dark:text-white">{{ $event->title }}</h3>
@@ -73,9 +76,13 @@
             </ul>
             <h2 class="text-xl mb-3 pb-1 border-b-2 border-gray-200 dark:border-gray-600">ニュース</h2>
             <ul class='mb-5 flex flex-row flex-wrap gap-2'>
+                
+                
             @foreach ($news as $news_item)
                 <li class="w-full md:w-[calc(50%_-_0.5rem)]  lg:w-[calc(33%_-_0.5rem)] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                    <img class="rounded-t-lg w-full h-52 object-cover" src="https://placehold.jp/1600x900.png?text=画像準備中" alt="" />
+                    @foreach ($news_item->news_images as $news_image)
+                        <img class="rounded-t-lg w-full h-52 object-cover" src="{{$news_image->path}}" alt="画像準備中" />
+                    @endforeach
                     <div class="p-3">
                         <h3 class="mb-1 text-2xl tracking-tight text-gray-900 dark:text-white">{{ $news_item->title }}</h3>
                         <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">{{ $news_item->date }}</p>
