@@ -60,7 +60,6 @@ Route::middleware('auth')->group(function () {
     
     // sendMessage chat送信
     Route::post('/chat', [App\Http\Controllers\ChatController::class, 'sendMessage']);
-
     
     // profile プロフィール編集・更新・削除
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
