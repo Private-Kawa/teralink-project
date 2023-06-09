@@ -20,6 +20,9 @@
             <p>{{ $events->title }}</p>
             <p class="text-sm text-gray-700 dark:text-gray-400">{{ $events->date }}</p>
         </h2>
+        @foreach ($events->events_images as $event_image)
+            <img class="rounded-t-lg mb-10 w-full h-60 object-cover" src="{{$event_image->path}}" alt="画像準備中" />
+        @endforeach
         <p class="mb-6">{{ $events->content }}</p>
     @else
         <h2 class="flex items-end justify-between text-xl mb-3 pb-1 border-b-2 border-gray-200 dark:border-gray-600">
@@ -29,6 +32,9 @@
         <div class="flex justify-end mb-3">
             <a href="/posts/events/{{ $events->id }}/edit" class="text-white bg-blue-800 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-1 dark:bg-blue-700 dark:hover:bg-blue-800 focus:outline-none dark:focus:ring-blue-700">編集</a>
         </div>
+        @foreach ($events->events_images as $event_image)
+            <img class="rounded-t-lg mb-10 w-full h-60 object-cover" src="{{$event_image->path}}" alt="画像準備中" />
+        @endforeach
         <p class="mb-6">{{ $events->content }}</p>
     @endif
 </x-app-layout>
